@@ -83,6 +83,7 @@ def lookup(book,chapter,verse,end_verse):
                 except IndexError:
                     return "Error : Verse is incorrect, Please check and try again"
 
+
 #read command line arguments
 args = parser.parse_args()
 
@@ -101,12 +102,12 @@ if len(scripture_string) > 1: #eg: 1 John 2:1 [ '1 John 2', '1' ]
         start_verse = verse_start_end[0]
     
     book = ' '.join(scripture_string[0].split()[:-1]) #convert list to string
-    chapter = ' '.join(scripture_string[0].split()[-1]) #convert list to string
+    chapter = ''.join(scripture_string[0].split()[-1]) #convert list to string
 
 else: #eg: 1 John 2 ['1 John 2']
     if scripture_string[0].split()[-1].isdigit() == True: #check if book has a chapter
         book = ' '.join(scripture_string[0].split()[:-1]) #convert list to string
-        chapter = ' '.join(scripture_string[0].split()[-1]) #convert list to string
+        chapter = ''.join(scripture_string[0].split()[-1]) #convert list to string
     else:
         book = ' '.join(scripture_string) #convert list to string
 
