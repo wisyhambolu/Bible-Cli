@@ -99,7 +99,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 If you find this project helpful, consider buying me a coffee! Your support helps me maintain and improve this project.
 
-[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg)](https://buymeacoffee.com/wisyhambolu)
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/default-orange.png)](https://buymeacoffee.com/wisyhambolu)
 
 ## License
 
@@ -111,6 +111,5 @@ Created by Wisdom Hambolu
 
 ## Acknowledgments
 
-- Bible dataset from [source]
 - Rich library for beautiful terminal output
 - RapidFuzz for fuzzy matching
