@@ -1,8 +1,25 @@
 # Bible CLI
 
-A command-line interface for reading and searching the Bible, built with Python and Rich.
+A command-line interface for reading and searching the Bible woth beautiful formatting to keep you in the Word everyday.
 
-![Bible CLI Demo](demo.gif)
+## Demo
+
+### Scripture Lookup
+![Bible CLI - Scripture Lookup](demo/bible-cli-1.png)
+*Look up verses with beautiful formatting*
+
+### Search Functionality
+![Bible CLI - Search](demo/bible-cli-4.png)
+*Search across the Bible with advanced filters*
+
+### Bookmarks
+![Bible CLI - Bookmarks](demo/bible-cli-2.png)
+![Bible CLI - Bookmarks](demo/bible-cli-3.png)
+*Save your favorite verses with a comment on your thoughts*
+
+### Daily Verse
+![Bible CLI - Daily Verse](demo/bible-cli-5.png)
+*Get daily inspiration*
 
 ## Features
 
@@ -41,25 +58,6 @@ bible -s "love"
 
 # Advanced search with options
 bible -s "faith" --testament new --min-words 10 --max-words 20 --regex
-```
-
-## Examples
-
-1. Look up a specific verse:
-```
-Enter scripture (e.g., 'John 3:16'): John 3:16
-```
-
-2. Search for a keyword:
-```
-Enter keyword to search: love
-Enable regex search? (yes/no): no
-```
-
-3. Get a daily verse:
-```
-Today's Verse:
-[Verse display]
 ```
 
 ## Features in Detail
