@@ -17,8 +17,6 @@ build/
 bible_cli/
 test_env/
 Manifest.in
-pyproject.toml
-setup.py
 demo.sh
 demo.cast
 demo.gif
