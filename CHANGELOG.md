@@ -3,7 +3,7 @@
 
 ## [1.0.2] - 2025-03-20
 
-Updated documentation
+- Updated documentation to show demos
 
 ## [1.0.1] - 2025-03-20
 
