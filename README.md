@@ -2,6 +2,8 @@
 
 A command-line interface for reading and searching the Bible, built with Python and Rich.
 
+![Bible CLI Demo](demo.gif)
+
 ## Features
 
 - Look up specific verses by book, chapter, and verse
@@ -16,34 +18,29 @@ A command-line interface for reading and searching the Bible, built with Python 
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/wisyhambolu/Bible-Cli.git
-cd Bible-Cli
-```
+Install directly from PyPI:
 
-2. Install dependencies:
 ```bash
-pip install -r requirements.txt
+pip install bible-cli
 ```
 
 ## Usage
 
 ### Interactive Mode
 ```bash
-python bible_cli.py
+bible
 ```
 
 ### Command Line Arguments
 ```bash
 # Look up a specific verse
-python bible_cli.py "John 3:16"
+bible "John 3:16"
 
 # Search for a keyword
-python bible_cli.py -s "love"
+bible -s "love"
 
 # Advanced search with options
-python bible_cli.py -s "faith" --testament new --min-words 10 --max-words 20 --regex
+bible -s "faith" --testament new --min-words 10 --max-words 20 --regex
 ```
 
 ## Examples
@@ -84,6 +81,26 @@ Today's Verse:
 - Save favorite verses
 - Add notes to bookmarks
 - View all bookmarks with timestamps
+
+## Development
+
+If you want to contribute to the project or run it from source:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/wisyhambolu/Bible-Cli.git
+cd Bible-Cli
+```
+
+2. Install development dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the development version:
+```bash
+python -m bible_cli
+```
 
 ## Contributing
 

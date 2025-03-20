@@ -1,3 +1,8 @@
+.vscode/
+.idea/
+.venv/
+build/
+_skbuild/
 pycache/
 __pycache__/
 *.pyc
@@ -5,3 +10,15 @@ __pycache__/
 *.pyd
 *.pyw
 *.pyz
+*.pkl
+*.egg-info
+dist/
+build/
+bible_cli/
+test_env/
+Manifest.in
+pyproject.toml
+setup.py
+demo.sh
+demo.cast
+demo.gif
