@@ -16,6 +16,9 @@ from rich.spinner import Spinner
 from rich.prompt import Prompt
 from rapidfuzz import fuzz
 
+# Version information
+__version__ = "1.0.1"
+
 # Initialize Rich console
 console = Console()
 
