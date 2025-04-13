@@ -106,10 +106,10 @@ def display_bookmarks():
     console.print(table)
 
 def process_scripture(scripture_input):
-    # First try to match book-only pattern
-    book_only_match = re.match(r"(\D+)$", scripture_input)
+    # First try to match book-only pattern (now handles I, II, III, 1, 2, 3 prefixes)
+    book_only_match = re.match(r"^(?:(?:I|II|III|[123])\s+)?\D+$", scripture_input)
     if book_only_match:
-        book = book_only_match.group(1)
+        book = book_only_match.group(0)
         result = lookup(book, 1, 1)  # Start from first chapter and verse
         if result:
             book_name, chapter, start_verse, verses = result
@@ -162,7 +162,7 @@ def process_scripture(scripture_input):
         return
 
     # Then try to match book and chapter pattern
-    book_chapter_match = re.match(r"(\D+)\s(\d+)$", scripture_input)
+    book_chapter_match = re.match(r"^((?:(?:I|II|III|[123])\s+)?\D+)\s+(\d+)$", scripture_input)
     if book_chapter_match:
         book, chapter = book_chapter_match.groups()
         result = lookup(book, chapter, 1)  # Start from first verse of the chapter
@@ -217,7 +217,7 @@ def process_scripture(scripture_input):
         return
 
     # Then try to match chapter:verse pattern
-    match = re.match(r"(\D+)\s(\d+):(\d+)(?:-(\d+))?", scripture_input)
+    match = re.match(r"^((?:(?:I|II|III|[123])\s+)?\D+)\s+(\d+):(\d+)(?:-(\d+))?", scripture_input)
     if match:
         book, chapter, verse, end_verse = match.groups()
         result = lookup(book, chapter, verse, end_verse)
@@ -482,8 +482,20 @@ def lookup(book_name, chapter, start_verse, end_verse=None, non_interactive=Fals
 
 def confirm_best_match(book_name, non_interactive=False):
     """Confirm if the best match is correct"""
-    # Convert to lowercase for comparison
-    book_name = book_name.lower()
+    # Convert Roman numerals to numbers
+    def normalize_book_name(name):
+        roman_to_num = {
+            'I ': '1 ',
+            'II ': '2 ',
+            'III ': '3 '
+        }
+        for roman, num in roman_to_num.items():
+            if name.upper().startswith(roman):
+                return num + name[len(roman):]
+        return name
+
+    # Normalize and convert to lowercase for comparison
+    book_name = normalize_book_name(book_name).lower()
     
     # Check for exact match
     if book_name in book_lookup:
@@ -494,7 +506,9 @@ def confirm_best_match(book_name, non_interactive=False):
     best_ratio = 0
     
     for book in book_lookup:
-        ratio = fuzz.ratio(book_name, book)
+        # Normalize both names for comparison
+        normalized_book = normalize_book_name(book)
+        ratio = fuzz.ratio(book_name, normalized_book)
         if ratio > best_ratio:
             best_ratio = ratio
             best_match = book
