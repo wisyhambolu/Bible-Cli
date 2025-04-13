@@ -17,7 +17,7 @@ from rich.prompt import Prompt
 from rapidfuzz import fuzz
 
 # Version information
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 # Initialize Rich console
 console = Console()

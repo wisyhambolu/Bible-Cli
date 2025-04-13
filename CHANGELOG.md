@@ -1,6 +1,10 @@
 # Changelog
 
 
+## [1.0.3] - 2025-04-13
+
+- Fix scriptures that start with a number
+
 ## [1.0.2] - 2025-03-20
 
 - Updated documentation to show demos

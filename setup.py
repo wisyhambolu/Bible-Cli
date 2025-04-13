@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="bible-cli",
-    version="1.0.2",
+    version = "1.0.3",
     author="Wisdom Hambolu",
     author_email="wisyhambolu@gmail.com",
     description="A command-line interface for reading and searching the Bible",
